@@ -1,0 +1,20 @@
+.vue3-circular-progressbar[data-v-49af6a0a] {
+    position:relative
+  }
+  .vue3-circular-progressbar .current-counter[data-v-49af6a0a] {
+    left:50%;
+    position:absolute;
+    top:50%;
+    transform:translate(-50%,-50%)
+  }
+  .circle-progress {
+    position:relative
+  }
+  .circle-progress span {
+    font-size:38px;
+    left:50%;
+    position:absolute;
+    top:50%;
+    transform:translate(-50%,-50%)
+  }
+  
