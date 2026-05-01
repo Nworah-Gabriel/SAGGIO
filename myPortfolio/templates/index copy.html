@@ -1,0 +1,815 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAGGIO - Software Engineer & Blockchain Developer</title>
+    <meta name="description" content="Nworah Gabriel Chimzuruoke - Fullstack & Blockchain Developer with 6+ years experience" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Play:wght@400;700&amp;display=swap" />
+    <link rel="stylesheet" href="../static/css/menu.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-qQL3rIh9ztWAAXoAgiA9YNg/qMTltGyrpSBdVgKA1/nfY5bKe7iQfFiwKN32E6F9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-B8gtA07D4LB7xfpdcQ/1zN8Cq90gfDndR7tJpeC7N2m2AIjSt2cjgxCAAhWfD+L3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/flaticon.css" />
+    <link rel="stylesheet" href="../static/css/fontawesome-free-6.6.0-web/css/all.min.css" />
+    <link rel="stylesheet" href="../static/css/animate.css" />
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <link rel="stylesheet" href="../static/chart.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <link rel="stylesheet" href="../static/css/default.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/responsive.css" />
+    <style>
+    @font-face {
+      font-family: swiper-icons;
+      font-style: normal;
+      font-weight: 400;
+      src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA");
+    }
+    :root {
+      --swiper-theme-color: #007aff;
+    }
+    :host {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .swiper {
+      display: block;
+      list-style: none;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -70%;
+      width: 70%;
+      height: 100%;
+      background-color: #21b1f4;
+      color: #ffffff;
+      z-index: 1000;
+      transition: left 0.3s ease-in-out;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+    .mobile-nav.open {
+      left: 0;
+    }
+    .mobile-nav-header {
+      padding: 15px;
+      background-color: #1c1c79;
+      border-bottom: 1px solid #ffffff;
+    }
+    .mobile-nav-menu ul {
+      list-style: none;
+      padding: 20px;
+    }
+    .mobile-nav-menu ul li {
+      margin: 15px 0;
+    }
+    .mobile-nav-menu ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .close-btn {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    /* Modal Styles */
+    .project-modal .modal-content {
+      background: #1a1a2e;
+      color: #fff;
+      border-radius: 15px;
+      border: 1px solid #21b1f4;
+    }
+    .project-modal .modal-header {
+      border-bottom: 1px solid #21b1f4;
+    }
+    .project-modal .modal-header .close {
+      color: #fff;
+      opacity: 1;
+    }
+    .project-modal .modal-body img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .tech-badge {
+      background: #21b1f4;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .project-link {
+      color: #21b1f4;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+    @media screen and (max-width: 600px) {
+      #percent { margin-left: 60px; padding: 25px; padding-left: 50px; }
+      #Percent { margin-left: -20px; }
+    }
+    @media screen and (min-width: 1024px) {
+      .education-img img { width: 8000px; height: 500px; }
+    }
+    </style>
+</head>
+<body class="body-midnight-blue" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div id="__nuxt">
+        <header>
+            <div id="header-sticky" class="transparent-header header-area">
+                <div class="header">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5">
+                                <div class="logo mt-50 mb-50 transition5">
+                                    <a class="header-logo" href="#">
+                                        <img src="../static/images/logo.png" alt="SAGGIO" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-7 pl-0 d-flex justify-content-end align-items-center">
+                                <div class="main-menu d-none d-xl-block">
+                                    <nav id="mobile-menu">
+                                        <ul class="d-block">
+                                            <li><a class="active" href="#home">Home</a></li>
+                                            <li><a href="#about">About</a></li>
+                                            <li><a href="#work">Works</a></li>
+                                            <li><a href="#service">service</a></li>
+                                            <li><a href="#contact">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-btn pl-45">
+                                    <a href="https://x.com/NworahGabriel" class="white-text text-uppercase d-inline-block f-700">Let's Connect</a>
+                                </div>
+                                <div class="menu-toggle-wrapper d-block d-lg-none" style="margin-left: 20px; padding-right: 5px;">
+                                    <a class="menu-toggle-btn theme-color primary-hover" href="javascript:void(0);" onclick="openMobileMenu()">
+                                        <i class="fas fa-bars fa-2x"></i>
+                                    </a>
+                                </div>
+                                <div id="mobileNav" class="mobile-nav">
+                                    <div class="mobile-nav-header d-flex justify-content-between align-items-center">
+                                        <div class="logo mt-50 mb-50 transition5" style="background-color: #1c1c79;">
+                                            <a class="header-logo" href="#">
+                                                <img src="../static/images/logo.png" alt="SAGGIO" />
+                                            </a>
+                                        </div>
+                                        <a href="javascript:void(0);" class="close-btn text-white" onclick="closeMobileMenu()">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                    <nav class="mobile-nav-menu">
+                                        <div class="mobile-menu mt-10 mean-container" style="margin-top: -70px;">
+                                            <div class="mean-bar">
+                                                <nav class="mean-nav">
+                                                    <ul class="d-block">
+                                                        <li><a class="active" href="#home" onclick="closeMobileMenu()">Home</a></li>
+                                                        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                                                        <li><a href="#work" onclick="closeMobileMenu()">Works</a></li>
+                                                        <li><a href="#service" onclick="closeMobileMenu()">Service</a></li>
+                                                        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                        <h5 class="text-white text-center mt-35 pb-1 d-inline-block ml-3">Follow me</h5>
+                                        <ul class="social social-bg text-center d-flex mt-10 ml-3">
+                                            <li class="mr-2 rotate-hover"><a class="facebook-bg text-center pr-0 text-white d-block transition-3 rotate" href="https://web.facebook.com/people/Nworah-Gabriel-Chimzuruoke/100083536317104/" style="padding-top: 13px;"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="mr-2 rotate-hover"><a class="twitter-bg text-center pr-0 text-white d-block rotate transition-3" href="#" style="padding-top: 13px;"><i class="fab fa-twitter"></i></a></li>
+                                            <li class="mr-2 rotate-hover"><a class="linkedin-bg text-center pr-0 text-white d-block rotate transition-3" href="https://www.linkedin.com/in/nworah-gabriel-chimzuruoke-b74121224/" style="padding-top: 13px;"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <script>
+                                    function openMobileMenu() { document.getElementById("mobileNav").classList.add("open"); }
+                                    function closeMobileMenu() { document.getElementById("mobileNav").classList.remove("open"); }
+                                </script>
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="over-hiddenn">
+            <!-- Hero Section (keeping your original) -->
+            <div id="home" class="slider-area slider-bg-color over-hidden">
+                <div class="single-slider slider-height over-hidden position-relative xxl-device-width bg-cover no-repeat">
+                    <div class="container slider-height d-flex align-items-end">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-xl-5 col-lg-6 col-md-12 col-sm-11 col-12 d-flex align-items-center justify-content-center">
+                                <div class="slider-wrapper h-100">
+                                    <div class="slider-content text-center mt--45 text-lg-left position-relative z-index11 aos-init" data-aos="fade-right" data-aos-duration="2200" data-aos-delay="1000">
+                                        <h1 class="mb-15 white-text">
+                                            <span class="sub-heading d-block text-uppercase theme-color mb-0">Hello I'm</span>
+                                            SAGGIO
+                                        </h1>
+                                        <h2 class="text-capitalize white-text mb-40">
+                                            A <span class="d-text d-block d-sm-inline-block">
+                                                <span class="typer theme-color d-inline-block pl-2" id="main" data-words="Software Engineer, Blockchain Developer, Fullstack Developer, Smart Contract Engineer" data-delay="100" data-colors="#21b1f4" style="color: #21b1f4">Software Engineer</span>
+                                                <span class="cursor theme-color d-inline-block" data-owner="main" style="transition: 0.1s; opacity: 1"></span>
+                                            </span>
+                                        </h2>
+                                        <a href="mailto:gabrielnworah6@gmail.com" class="btn position-relative over-hidden theme-bg text-uppercase transition5">Say Hello</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-6 col-md-7 col-sm-10 col-12 d-flex justify-content-center align-items-end h-100">
+                                <div class="slider-img pl-120 position-relative z-index1">
+                                    <img src="../static/images/NewME.png" alt="hero image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-social-link position-absolute right-0 d-none d-md-block z-index11">
+                        <ul class="social pr-60">
+                            <li class="mt-10 mb-10 rotate-hover"><a class="text-white text-center d-inline-block rotate" href="https://web.facebook.com/people/Nworah-Gabriel-Chimzuruoke/100083536317104/" style="padding-top: 15px;"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="mt-10 mb-10 rotate-hover"><a class="text-white text-center d-inline-block rotate" href="https://x.com/NworahGabriel/" style="padding-top: 15px;"><i class="fab fa-twitter"></i></a></li>
+                            <li class="mt-10 mb-10 rotate-hover"><a class="text-white text-center d-inline-block rotate" href="https://www.linkedin.com/in/nworah-gabriel-chimzuruoke-b74121224/" style="padding-top: 15px;"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li class="mt-10 mb-10 rotate-hover"><a class="text-white text-center d-inline-block rotate" href="https://linktr.ee/Chimzuruoke" style="padding-top: 15px;"><i class="fas fa-link"></i></a></li>
+                            <li class="mt-10 mb-10 rotate-hover"><a class="text-white text-center d-inline-block rotate" href="https://github.com/Nworah-Gabriel/" style="padding-top: 15px;"><i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intro Feature Area (keeping your original) -->
+            <div class="intro-feature-area over-hidden position-relative section-bg">
+                <div class="container">
+                    <div class="row single-intro-feature-wrapper justify-content-center pt-170 pb-140">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-9 col-11">
+                            <div data-tilt data-tilt-max="10" class="secondary-bg single-intro-feature-content border-radius10 transition5 mb-30">
+                                <div class="intro-ft-icon d-inline-block mb-30 transition5"><img src="../static/images/intro-ft-icon1.png" alt="icon1" /></div>
+                                <div class="intro-feature-text"><h4 class="mb-22">Dedication</h4><p>I am committed to excellence, always striving to improve and deliver high-quality results.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-9 col-11">
+                            <div data-tilt data-tilt-max="10" class="secondary-bg mt-60 single-intro-feature-content border-radius10 transition5 mb-30">
+                                <div class="intro-ft-icon d-inline-block mb-30 transition5"><img src="../static/images/intro-ft-icon2.png" alt="icon1" /></div>
+                                <div class="intro-feature-text"><h4 class="mb-22">Smart Work</h4><p>I focus on efficiency and innovation, finding the smartest solutions towards achieving the best results.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-9 col-11">
+                            <div data-tilt data-tilt-max="10" class="secondary-bg single-intro-feature-content border-radius10 transition5 mb-30">
+                                <div class="intro-ft-icon d-inline-block mb-30 transition5"><img src="../static/images/intro-ft-icon3.png" alt="icon1" /></div>
+                                <div class="intro-feature-text"><h4 class="mb-22">Collaboration</h4><p>I thrive in team settings, open communication and collective problem-solving to achieve common goals.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-9 col-11">
+                            <div data-tilt data-tilt-max="10" class="secondary-bg mt-60 single-intro-feature-content border-radius10 transition5 mb-30">
+                                <div class="intro-ft-icon d-inline-block mb-30 transition5"><img src="../static/images/intro-ft-icon4.png" alt="icon1" /></div>
+                                <div class="intro-feature-text"><h4 class="mb-22">Technology</h4><p>I embrace cutting-edge technologies to drive innovation and solve complex challenges effectively.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Section (keeping your original) -->
+            <div id="about" class="about-area over-hidden">
+                <div class="about-content-wrapper about-margin mt-170 mb-110 position-relative">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-6 col-md-8 offset-md-0 col-sm-10 col-10">
+                                <div class="about-img-wrapper position-relative mb-90">
+                                    <div class="about-img position-relative z-index11 aos-init" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100">
+                                        <div class="about-img-over pl-50 transition5 d-inline-block position-relative">
+                                            <div class="position-relative z-index11" data-tilt data-tilt-max="10">
+                                                <img class="border-radius10 position-relative z-index11" src="../static/images/me.jpeg" alt="about image" />
+                                            </div>
+                                            <div class="about-shape1 position-absolute aos-init" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="800"></div>
+                                            <div class="about-shape2 position-absolute z-index11 aos-init" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="800"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="about-content position-relative mb-50">
+                                    <div class="position-relative">
+                                        <div class="title">
+                                            <span class="theme-color text-uppercase d-block mb-1 mt--5">About Me</span>
+                                            <h2 class="mb-30">I Develop System that Works</h2>
+                                        </div>
+                                    </div>
+                                    <p class="mb-25">I specialize in developing efficient, reliable systems that address real-world problems and drive success. With 6+ years of experience in fullstack and blockchain development, I've delivered over 30 successful projects for clients across fintech, real estate, and blockchain infrastructure.</p>
+                                    <div class="about-info-wrapper pt-25 pb-20 mt-25">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
+                                                <ul class="about-info"><li class="d-inline-block pr-50"><p class="jostMedium-font-family mb-6">Name</p></li><li class="d-inline-block"><p class="mb-6">Nworah Chimzuruoke Gabriel</p></li></ul>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
+                                                <ul class="about-info"><li class="d-inline-block pr-50"><p class="jostMedium-font-family mb-6">Nationality</p></li><li class="d-inline-block"><p class="mb-6">Nigeria</p></li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="about-footer-content d-sm-flex align-items-center mt-lg-2 mt-sm-4 mt-3">
+                                        <div class="about-footer-content-right mt-20 text-left">
+                                            <h6 class="d-xl-inline-block text-uppercase pr5 mb-0">SAGGIO</h6>
+                                            <span class="openS-font-family meta-text-color">Smart Contract Engineer, Borderless Community | Arbitrum Ambassador</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio/Works Section with NEW Projects -->
+            <div id="work" class="portfolio-area over-hidden pb-165">
+                <div class="marquee-w mb-125" style="height: 100px; margin-bottom: 50px;">
+                    <div class="marquee"><span class="pl-4">Software Engineer from Nteje, Anambra State, Nigeria *</span><span class="pl-4">Software Engineer from Nteje, Anambra State, Nigeria *</span></div>
+                    <div class="marquee marquee2 pb-1"><span>I'm Open for new projects * Let's Work Together.</span><span>I'm Open for new projects * Let's Work Together.</span></div>
+                </div>
+                <div class="portfolio-wrapper position-relative mt--5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="title text-center" style="margin-top: 100px;">
+                                    <span class="theme-color text-uppercase d-block mb-6">Portfolio</span>
+                                    <h2>My Recent Works</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row portfolio mt-80">
+                            <!-- NEW PROJECT 1: Xmarr Escrow App -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Fintech Android App</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal1"><h3>Xmarr Escrow App</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal1"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/xmarr.png" alt="Xmarr" onerror="this.src='../static/images/placeholder.png'"/></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#projectModal1">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NEW PROJECT 2: ByteOnChain -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Decentralized LMS</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal2"><h3>ByteOnChain</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal2"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/byteonchain.png" alt="ByteOnChain" onerror="this.src='../static/images/placeholder.png'"/></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#projectModal2">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NEW PROJECT 3: House4Rent -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Real Estate App</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal3"><h3>House4Rent</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal3"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/house4rent.png" alt="House4Rent" onerror="this.src='../static/images/placeholder.png'"/></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#projectModal3">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NEW PROJECT 4: SocialsMall -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Social Media Platform</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal4"><h3>SocialsMall</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal4"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/socialsmall.png" alt="SocialsMall" onerror="this.src='../static/images/placeholder.png'"/></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#projectModal4">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NEW PROJECT 5: Setapat -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Design Platform</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal5"><h3>Setapat</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#projectModal5"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/setapat.png" alt="Setapat" onerror="this.src='../static/images/placeholder.png'"/></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#projectModal5">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- YOUR ORIGINAL PROJECTS (Keep as is) -->
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Decentralized App</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="https://simplenft-three.vercel.app/"><h3>SimpleNFT</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="https://simplenft-three.vercel.app/"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/simpleNFT.png" alt="SimpleNFT" /></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#exampleModal-p1">
+                                            <a href="https://simplenft-three.vercel.app/"><span class="d-inline-block"><i class="fas fa-plus"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Decentralized Protocol</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="https://stake-lemon.vercel.app/"><h3>Decentralized Staking App</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="https://stake-lemon.vercel.app/"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/stake.png" alt="Staking App" /></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#exampleModal-p1">
+                                            <span class="d-inline-block"><i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Decentralized App</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="https://attest-six.vercel.app/"><h3>A Decentralized Attestation Tool</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="https://attest-six.vercel.app/"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/attest.png" alt="Attestation Tool" /></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#exampleModal-p1">
+                                            <a href="https://attest-six.vercel.app/"><span class="d-inline-block"><i class="fas fa-plus"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Web Application</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="https://aweville.onrender.com/"><h3>A Hotel Management System</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="https://aweville.onrender.com/"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/aweville.png" alt="Hotel Management" /></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#exampleModal-p1">
+                                            <a href="https://aweville.onrender.com/"><span class="d-inline-block"><i class="fas fa-plus"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row single-portfolio position-relative theme-border-top align-items-center">
+                                    <div class="col-xl-2 col-lg-2 col-md-7 col-sm- col-">
+                                        <div class="port-category"><span class="meta-text-color text-uppercase">Decentralized Protocol</span></div>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- pl-lg-0">
+                                        <a href="https://crude-omega.vercel.app/"><h3>A Decentralized Token Vendor</h3></a>
+                                    </div>
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm- col- d-flex justify-content-end align-items-center">
+                                        <a href="https://crude-omega.vercel.app/"><img class="port-img position-absolute left-0 ml-xl-3 transition5" src="../static/images/vend.png" alt="Token Vendor" /></a>
+                                        <div class="port-content text-center transition5 z-index11" data-toggle="modal" data-target="#exampleModal-p1">
+                                            <a href="https://crude-omega.vercel.app/"><span class="d-inline-block"><i class="fas fa-plus"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT MODALS -->
+            <!-- Modal 1: Xmarr -->
+            <div class="modal fade project-modal" id="projectModal1" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header"><h5 class="modal-title">Xmarr Escrow Application</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                        <div class="modal-body">
+                            <img src="../static/images/xmarr.png" alt="Xmarr" onerror="this.src='../static/images/placeholder.png'">
+                            <h4>Project Overview</h4>
+                            <p>Xmarr is a secure escrow Android application that facilitates safe transactions between buyers and sellers. The platform holds funds in escrow until both parties confirm satisfactory completion of the transaction, reducing fraud risk.</p>
+                            <h5>Key Features:</h5>
+                            <ul><li>Secure escrow smart contract integration</li><li>BankNaija (9psb) Wallet As A Service banking integration</li><li>Dispute resolution system</li><li>Real-time transaction tracking</li></ul>
+                            <div class="tech-stack"><span class="tech-badge">Android (Kotlin/Java)</span><span class="tech-badge">Nest.js API</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">Banking API Integration</span></div>
+                            <div class="mt-3"><a href="https://xmar.vercel.app/" target="_blank" class="project-link">Landing Page →</a><a href="https://drive.google.com/file/d/1tNT2Qs2qxzT94CUnEspvBuoMTaBQT7zz/view" target="_blank" class="project-link">Download App →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2: ByteOnChain -->
+            <div class="modal fade project-modal" id="projectModal2" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header"><h5 class="modal-title">ByteOnChain - Decentralized LMS</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                        <div class="modal-body">
+                            <img src="../static/images/byteonchain.png" alt="ByteOnChain" onerror="this.src='../static/images/placeholder.png'">
+                            <h4>Project Overview</h4>
+                            <p>ByteOnChain is a decentralized Learning Management System (LMS) that issues blockchain-based attestations and NFT certifications for learners who complete courses and quizzes successfully.</p>
+                            <h5>Key Features:</h5>
+                            <ul><li>Ethereum Attestation Service (EAS) integration for verifiable credentials</li><li>Upgradable NFT contract factory using OpenZeppelin</li><li>Multi-chain support (Arbitrum, Celo, Base, Optimism)</li><li>Quiz completion on-chain verification</li></ul>
+                            <div class="tech-stack"><span class="tech-badge">Solidity</span><span class="tech-badge">Hardhat</span><span class="tech-badge">React.js</span><span class="tech-badge">EAS Protocol</span><span class="tech-badge">OpenZeppelin</span></div>
+                            <div class="mt-3"><a href="https://byteonchain.xyz" target="_blank" class="project-link">Visit Website →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 3: House4Rent -->
+            <div class="modal fade project-modal" id="projectModal3" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header"><h5 class="modal-title">House4Rent - Real Estate Platform</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                        <div class="modal-body">
+                            <img src="../static/images/house4rent.png" alt="House4Rent" onerror="this.src='../static/images/placeholder.png'">
+                            <h4>Project Overview</h4>
+                            <p>House4Rent is a comprehensive real estate Android application connecting property seekers with landlords. The platform includes a mobile app for users, an admin dashboard for analytics, and a landing page for marketing.</p>
+                            <h5>Key Features:</h5>
+                            <ul><li>Property listing and search with filters</li><li>Paystack payment gateway integration (50% payment processing speed improvement)</li><li>Admin dashboard with analytics</li><li>In-app messaging between tenants and landlords</li></ul>
+                            <div class="tech-stack"><span class="tech-badge">Flutter/Dart</span><span class="tech-badge">Nest.js</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">Paystack API</span><span class="tech-badge">React Admin Dashboard</span></div>
+                            <div class="mt-3"><a href="https://www.gethouse4rent.com/" target="_blank" class="project-link">Landing Page →</a><a href="https://house4rent-admin.vercel.app/" target="_blank" class="project-link">Admin Dashboard →</a><a href="https://drive.google.com/file/d/1M6ryXiBCGEt_ukU0LPO0aYLVGMri_Grg/view" target="_blank" class="project-link">Download App →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 4: SocialsMall -->
+            <div class="modal fade project-modal" id="projectModal4" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header"><h5 class="modal-title">SocialsMall - Social Media Boosting</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                        <div class="modal-body">
+                            <img src="../static/images/socialsmall.png" alt="SocialsMall" onerror="this.src='../static/images/placeholder.png'">
+                            <h4>Project Overview</h4>
+                            <p>SocialsMall is a platform that helps individuals and businesses boost their social media presence through authentic engagement services across multiple platforms.</p>
+                            <h5>Key Features:</h5>
+                            <ul><li>Multi-platform social media services (Instagram, Twitter, TikTok, Facebook)</li><li>Automated order processing</li><li>Payment gateway integration</li><li>User dashboard for tracking orders</li></ul>
+                            <div class="tech-stack"><span class="tech-badge">React.js</span><span class="tech-badge">Node.js</span><span class="tech-badge">Express</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Payment Integration</span></div>
+                            <div class="mt-3"><a href="https://socialsmall.onrender.com/" target="_blank" class="project-link">Visit Website →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 5: Setapat -->
+            <div class="modal fade project-modal" id="projectModal5" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header"><h5 class="modal-title">Setapat - Design as a Service</h5><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                        <div class="modal-body">
+                            <img src="../static/images/setapat.png" alt="Setapat" onerror="this.src='../static/images/placeholder.png'">
+                            <h4>Project Overview</h4>
+                            <p>Setapat is a design company dedicated to delivering hassle-free, high-quality creative solutions. The platform provides affordable and reliable design services for individuals and businesses of all sizes.</p>
+                            <h5>Key Features:</h5>
+                            <ul><li>Design service marketplace</li><li>Client project management dashboard</li><li>Portfolio showcase</li><li>Service booking system</li></ul>
+                            <div class="tech-stack"><span class="tech-badge">Next.js</span><span class="tech-badge">TypeScript</span><span class="tech-badge">Tailwind CSS</span><span class="tech-badge">Node.js</span></div>
+                            <div class="mt-3"><a href="https://www.setapat.com/" target="_blank" class="project-link">Visit Website →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Facts Section (keeping your original) -->
+            <div class="fun-fact-area position-relative over-hidden pt-150 pb-120 section-bg aos-init" data-aos="fade-up" data-aos-duration="1800">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm- col-">
+                            <div class="fun-fact-content mb-50 mr-lg-2 mr-xl-0">
+                                <div class="position-relative"><div class="title"><span class="theme-color text-uppercase d-block mb-1 mt--5">Fun Facts</span><h2 class="mb-30 text-white">I Develop System that Works</h2></div></div>
+                                <p>With 6+ years of experience in software development, I've successfully delivered over 30+ projects for clients across fintech, real estate, blockchain, and design industries. My focus is on creating efficient, scalable solutions that solve real-world problems using cutting-edge technologies.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 offset-xl-1 col-lg-6 col-md-12 col-sm- col-">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10"><div class="single-fact d-block d-flex align-items-center border-radius10 mb-30"><div class="mr-25 d-flex align-content-start justify-content-center"><span class="theme-color d-inline-block counter">6</span></div><h3 class="text-white mb-0">Years of<br />Experience</h3></div></div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10"><div class="single-fact d-block d-flex align-items-center border-radius10 mb-30"><div class="mr-25 d-flex align-content-start justify-content-center"><span class="theme-color d-inline-block counter">30</span></div><h3 class="text-white mb-0">Projects<br />Completed</h3></div></div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10"><div class="single-fact d-block d-flex align-items-center border-radius10 mb-30"><div class="mr-25 d-flex align-content-start justify-content-center"><span class="theme-color d-inline-block counter">10</span></div><h3 class="text-white mb-0">Digital<br />Products</h3></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Section (UPDATED with new roles) -->
+            <div class="experience-area over-hidden pb-165">
+                <div class="experience-wrapper extra-width position-relative">
+                    <div class="experience-bg-img left-0 top-0 bottom-0 bg-cover no-repeat w-50 position-absolute" data-background="../static/images/Work.jpeg" style="background-image: url('../static/images/Work.jpeg')"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-none"><div class="experience-img aos-init aos-animate" data-aos="fade-right" data-aos-duration="2000"></div></div>
+                            <div class="col-xl-6 col-lg-6 offset-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="experience-margin mt-160 pb-80 pl-100 mb-50">
+                                    <div class="position-relative"><div class="title"><span class="theme-color text-uppercase d-block mb-6 mt--5">Work Experience</span><h2 class="mb-25">My Experience</h2><p>With over 6 years of hands-on experience across blockchain development, full-stack engineering, and technical education, I've contributed to innovative projects and helped grow the Web3 ecosystem.</p></div></div>
+                                    <div class="experience-wrapper pt-25">
+                                        <ul class="experience-content">
+                                            <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block rotate fas fa-code"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Open Source Developer</h3><h4>Drips <span class="meta-text-color openS-font-family">(Mar 2026 - Present)</span></h4><p class="mb-0 mt-15">Collaborated with engineering teams to develop and maintain smart contract infrastructure across multiple blockchain projects, including NFT marketplaces and DeFi protocols on Stellar network. Optimized critical contract operations for ERC-721, ERC-1155, and launchpad factory patterns, reducing gas costs. Gained hands-on experience solving GitHub issues including bug fixes, feature enhancements, and performance optimizations.</p></div></li>
+                                            <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block rotate fas fa-globe"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Arbitrum Ambassador</h3><h4>Arbitrum <span class="meta-text-color openS-font-family">(Feb 2025 - Present)</span></h4><p class="mb-0 mt-15">Creating technical educational content including step-by-step guides on on-chain attestations using EAS on Arbitrum. Actively represented and promoted Arbitrum blockchain at regional tech events, fostering community engagement and educating developers on Layer 2 scaling solutions and decentralized verification tools.</p></div></li>
+                                            <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block rotate fas fa-laptop-code"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Fullstack Software Developer</h3><h4>ForkHive (Formerly Bloomhubng) <span class="meta-text-color openS-font-family">(Mar 2024 - Jan 2026)</span></h4><p class="mb-0 mt-15">Built and maintained scalable full-stack applications using React.js and Nest.js. Integrated third-party APIs, implemented authentication systems, and optimized application performance. Participated in code reviews, version control (Git), and Agile sprints.</p></div></li>
+                                            <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block rotate fas fa-network-wired"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Solidity Tutor & Smart Contract Engineer</h3><h4>Borderless Developers <span class="meta-text-color openS-font-family">(Mar 2024 - Jan 2026)</span></h4><p class="mb-0 mt-15">Developed and deployed production-ready smart contracts on Arbitrum, Celo, Base, and Optimism. Integrated EAS schemas for attestations, designed upgradable NFT contract factories. Delivered comprehensive lessons on Solidity programming, gas optimization, and dApp development.</p></div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section (UPDATED - graduate status) -->
+            <div class="education-area over-hidden">
+                <div class="container">
+                    <div class="row position-relative">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="position-relative"><div class="title"><span class="theme-color text-uppercase d-block mb-1">Education</span><h2 class="mb-25">My Education</h2><p>My educational background combines engineering fundamentals with specialized training in software development, blockchain technology, and IT support.</p></div></div>
+                            <div class="education-wrapper mr-20 pt-25 mb-50">
+                                <ul class="education-content">
+                                    <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block fas fa-user-graduate"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Bachelor in Petroleum and Gas Engineering (Graduated)</h3><h4>University of Port Harcourt <span class="meta-text-color openS-font-family">(2018 - 2024)</span></h4><p class="mb-0 mt-15">Completed a comprehensive engineering program covering drilling engineering, reservoir engineering, petroleum production, and gas processing.</p></div></li>
+                                    <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block fas fa-code"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Nano Degree in Smart Contract Development</h3><h4>Cyfrin Updraft <span class="meta-text-color openS-font-family">(2024 - Present)</span></h4><p class="mb-0 mt-15">Specialized training in secure smart contract development covering advanced Solidity patterns, gas optimization, EVM understanding, and blockchain security.</p></div></li>
+                                    <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block rotate fas fa-code"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Nano Degree in Software Engineering</h3><h4>ALX Africa <span class="meta-text-color openS-font-family">(2022 - 2023)</span></h4><p class="mb-0 mt-15">Intensive, hands-on program in computer software engineering focused on building scalable backend applications and full-stack development.</p></div></li>
+                                    <li class="mb-32 d-flex align-items-start rotate-hover"><div class="experience-ser-icon d-inline-block text-center mt-10 mr-30 transition3"><span class="theme-color d-inline-block"><span class="d-block fas fa-headset"></span></span></div><div class="experience-service-text d-inline-block"><h3 class="mb-2">Nano Degree in IT Support</h3><h4>Google, Coursera <span class="meta-text-color openS-font-family">(2022 - 2023)</span></h4><p class="mb-0 mt-15">Comprehensive IT support training covering system administration, networking, security fundamentals, and troubleshooting.</p></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-12 col-sm-12 col-12 d-lg-blok d-flex align-items-center justify-content-center">
+                            <div class="education-img position-relative text-center aos-init" data-aos="fade-left" data-aos-duration="2000">
+                                <img class="border-radius10" src="../static/images/WORK.jpeg" alt="education image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section (keeping your original) -->
+            <div id="skills" class="skill-area over-hidden position-relative pt-130 pb-110">
+                <div class="marquee-w mb-125" style="height: 100px; margin-bottom: 50px;">
+                    <div class="marquee"><span class="pl-4">Software Engineer from Nteje, Anambra State, Nigeria *</span><span class="pl-4">Software Engineer from Nteje, Anambra State, Nigeria *</span></div>
+                    <div class="marquee marquee2 pb-1"><span class="pl-4">I'm Open for new projects * Let's Work Together *</span><span class="pl-4">I'm Open for new projects * Let's Work Together *</span></div>
+                </div>
+                <div class="container">
+                    <div class="row align-items-start justify-content-center">
+                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                            <div class="position-relative"><div class="title mb-50" style="margin-top: 150px;"><span class="theme-color text-uppercase d-block mb-6">My Skill</span><h2 class="mb-25">Growing Over Times</h2><p>I've consistently focused on growing my technical skill set, adapting to new challenges and technologies. My expertise spans front-end and back-end development, blockchain technology, smart contract engineering, and technical education.</p></div></div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7 offset-xl-1 col-md-12 col-sm-12 col-12 aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1400" style="margin-top: 100px;">
+                            <div class="row justify-content-center mt-10">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-9 mb-30"><div class="single-skill text-center text-lg-right"><div class="progress-circular over-hidden" id="percent"><div class="circle-progress"><div data-v-49af6a0a class="vue3-circular-progressbar" style="height:190px;width:190px"><svg data-v-49af6a0a style="transform:rotate(-90deg);overflow:visible" xmlns="http://www.w3.org/2000/svg" viewBox="95 95 190 190"><circle data-v-49af6a0a cx="190" cy="190" r="92" stroke="#eceef4" stroke-width="6" fill="none"></circle><circle data-v-49af6a0a cx="190" cy="190" r="92" fill="none" stroke-width="6" stroke-dasharray="578.0530482605219" stroke-dashoffset="115.61060965210442" stroke-linecap="none" stroke="#21b1f4"></circle></svg></div><span class="text-white" id="Percent">80%</span></div><h4 class="mt-15 text-center">Front-End Development</h4></div></div></div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-9 mb-30"><div class="single-skill text-center text-lg-right"><div class="progress-circular over-hidden" id="percent"><div class="circle-progress"><div data-v-49af6a0a class="vue3-circular-progressbar" style="height:190px;width:190px"><svg data-v-49af6a0a style="transform:rotate(-90deg);overflow:visible" xmlns="http://www.w3.org/2000/svg" viewBox="95 95 190 190"><circle data-v-49af6a0a cx="190" cy="190" r="92" stroke="#eceef4" stroke-width="6" fill="none"></circle><circle data-v-49af6a0a cx="190" cy="190" r="92" fill="none" stroke-width="6" stroke-dasharray="578.0530482605219" stroke-dashoffset="28.90265241302609" stroke-linecap="none" stroke="#21b1f4"></circle></svg></div><span class="text-white" id="Percent">95%</span></div><h4 class="mt-15 text-center">Back-End Development</h4></div></div></div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-9 mb-30"><div class="single-skill text-center text-lg-right"><div class="progress-circular over-hidden" id="percent"><div class="circle-progress"><div data-v-49af6a0a class="vue3-circular-progressbar" style="height:190px;width:190px"><svg data-v-49af6a0a style="transform:rotate(-90deg);overflow:visible" xmlns="http://www.w3.org/2000/svg" viewBox="95 95 190 190"><circle data-v-49af6a0a cx="190" cy="190" r="92" stroke="#eceef4" stroke-width="6" fill="none"></circle><circle data-v-49af6a0a cx="190" cy="190" r="92" fill="none" stroke-width="6" stroke-dasharray="578.0530482605219" stroke-dashoffset="57.80530482605218" stroke-linecap="none" stroke="#21b1f4"></circle></svg></div><span class="text-white" id="Percent">90%</span></div><h4 class="mt-15 text-center">Smart Contract Development</h4></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Section (keeping your original) -->
+            <div id="service" class="service-area over-hidden pt-160 pb-145 section-bg">
+                <div class="service-wrapper position-relative">
+                    <div class="container">
+                        <div class="row align-items-start"><div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="title text-center"><span class="theme-color text-uppercase d-block mb-6">Service</span><h2 class="text-white">What I offer</h2></div></div></div>
+                        <div class="row service-wrappers mt-80">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aos-init"><div class="secondary-bg single-service shadow-hover transition3 border-radius10 pl-50 pr-50 pt-65 pb-55 mb-25"><div class="row"><div class="col-xl-3 col-lg-3 col-md-6 col-sm-4 col-4 text-lg-center"><div class="service-ser-icon d-inline-block text-center position-relative mb-15"><img class="position-relative z-index1" src="../static/images/ser-icon1.png" alt="icon" /></div></div><div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12"><div class="service-text d-inline-block ml-xl-2"><h3 class="mb-15">Smart Contract Development</h3><p class="mb-0">I design and develop robust smart contracts for EVM compatible networks to enhance transparency, security, and efficiency in blockchain applications.</p></div></div></div></div></div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aos-init"><div class="secondary-bg single-service shadow-hover transition3 border-radius10 pl-50 pr-50 pt-65 pb-55 mb-25"><div class="row"><div class="col-xl-3 col-lg-3 col-md-6 col-sm-4 col-4 text-lg-center"><div class="service-ser-icon d-inline-block text-center position-relative mb-15"><img class="position-relative z-index1" src="../static/images/ser-icon2.png" alt="icon" /></div></div><div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12"><div class="service-text d-inline-block ml-xl-2"><h3 class="mb-15">Software Development</h3><p class="mb-0">I develop high-quality software that drives efficiency and innovation, solving complex challenges with cutting-edge technologies. My focus is on creating user-friendly applications that enhance business processes.</p></div></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section (keeping your original) -->
+            <div id="contact" class="contact-area over-hidden mb-160 mt-155">
+                <div id="hero-btn" class="contact-wrapper position-relative">
+                    <div class="container">
+                        <div class="row align-items-start"><div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="title text-center"><span class="theme-color text-uppercase d-block mb-6">Contact Me</span><h2>Let's Start A New Project</h2></div></div></div>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12 col-12">
+                                <div class="contact-wrapper mt-70">
+                                    <ul class="contact-info-content">
+                                        <li class="contact-location s-contact mb-20 transition-3 d-lg-flex align-items-center"><div class="contact-icon d-inline-block text-center theme-bg mr-30"><span class="text-white d-inline-block" style="padding-top:15px;"><i class="fas fa-map-marker-alt"></i></span></div><div class="contact-text d-inline-block"><h4 class="mb-2">Location</h4><p class="text-color mb-0">Port Harcourt, Nigeria</p></div></li>
+                                        <li class="contact-email s-contact mb-20 transition-3 d-lg-flex align-items-center"><div class="contact-icon d-inline-block text-center theme-bg mr-30"><span class="text-white d-inline-block" style="padding-top:15px;"><i class="fas fa-phone-alt"></i></span></div><div class="contact-text"><h4 class="mb-2">Phone</h4><p class="mb-0"><a class="text-color primary-hover d-block" href="#">+234 902 509 1332</a></p></div></li>
+                                        <li class="contact-phone s-contact mb-20 transition-3 d-lg-flex align-items-center"><div class="contact-icon d-inline-block text-center theme-bg mr-30"><span class="text-white d-inline-block" style="padding-top:15px;"><i class="fas fa-envelope"></i></span></div><div class="contact-text d-inline-block"><h4 class="mb-2">Email</h4><p class="mb-0"><a class="text-color primary-hover d-block" href="#">gabrielnworah6@gmail.com</a></p></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12 col-12">
+                                <div class="contact-wrapper"><div class="contact-form mt-45">
+                                    {% load widget_tweaks %}
+                                    <form method="POST" id="contact-form">
+                                        {% csrf_token %}
+                                        <div class="contact-info pt-20">
+                                            <div class="row">
+                                                <div class="col-md-6">{{ form.name|add_class:"aos-init" }}</div>
+                                                <div class="col-md-6" style="padding-bottom:15px;">{{ form.email|add_class:"aos-init" }}</div>
+                                                <div class="col-md-6">{{ form.phone|add_class:"aos-init" }}</div>
+                                                <div class="col-md-6" style="padding-bottom:15px;">{{ form.subject|add_class:"aos-init" }}</div>
+                                                <div class="col-md-12">{{ form.message|add_class:"aos-init" }}</div>
+                                            </div><br>
+                                            <button class="btn theme-bg text-white" type="submit">Submit Now</button>
+                                        </div>
+                                    </form>
+                                    <p class="form-message mt-20"></p>
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-area over-hidden pt-110 mb-80">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 col-md-8 col-sm-7 col-12"><div class="footer-widget footer-logo pb-40"><div class="foot-logo mb-30"><img src="../static/images/logo.png" alt="SAGGIO" /></div><div class="copyright-text"><p class="mb-0">All rights reserved <a href="https://x.com/NworahGabriel" class="text-white c-theme f-600">SAGGIO</a> © 2025</p></div></div></div>
+                            <div class="col-xl-3 offset-xl-2 col-lg-3 col-md-4 col-sm-4 col-12 d-none d-sm-block d-lg-none"><div class="footer-widget pb-40"><h4 class="mb-28 mt-2">Follow Me</h4><ul class="social social-bg text-center d-flex"><li class="mr-2 rotate-hover"><a class="facebook-bg text-center pr-0 text-white d-block transition-3 rotate" href="https://web.facebook.com/people/Nworah-Gabriel-Chimzuruoke/100083536317104/"><i class="fab fa-facebook-f"></i></a></li><li class="mr-2 rotate-hover"><a class="twitter-bg text-center pr-0 text-white d-block rotate transition-3" href="https://x.com/NworahGabriel"><i class="fab fa-twitter"></i></a></li><li class="mr-2 rotate-hover"><a class="linkedin-bg text-center pr-0 text-white d-block rotate transition-3" href="https://www.linkedin.com/in/nworah-gabriel-chimzuruoke-b74121224/"><i class="fab fa-linkedin-in"></i></a></li></ul></div></div>
+                            <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12"><div class="footer-widget pb-40"><h4 class="mb-28 mt-2">Newsletter</h4><div class="newsletter-form"><form action="#"><div class="subscribe-info position-relative"><input class="sub-name theme-border pl-25 pt-15 pb-15 pr-10 w-100 secondary-color2 border-radius5 bg-transparent" type="email" name="email" id="Email" placeholder="Submit your email" /></div></form></div></div></div>
+                            <div class="col-xl-3 offset-xl-2 col-lg-3 col-md-4 col-sm-4 col-12 d-sm-none d-lg-block"><div class="footer-widget pb-40"><h4 class="mb-28 mt-2">Follow Me</h4><ul class="social social-bg text-center d-flex"><li class="mr-2 rotate-hover"><a class="facebook-bg text-center pr-0 text-white d-block transition-3 rotate" href="https://web.facebook.com/people/Nworah-Gabriel-Chimzuruoke/100083536317104/" style="padding-top:13px;"><i class="fab fa-facebook-f"></i></a></li><li class="mr-2 rotate-hover"><a class="twitter-bg text-center pr-0 text-white d-block rotate transition-3" href="https://x.com/NworahGabriel" style="padding-top:13px;"><i class="fab fa-twitter"></i></a></li><li class="mr-2 rotate-hover"><a class="linkedin-bg text-center pr-0 text-white d-block rotate transition-3" href="https://www.linkedin.com/in/nworah-gabriel-chimzuruoke-b74121224/" style="padding-top:13px;"><i class="fab fa-linkedin-in"></i></a></li></ul></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="scroll" class="scrollTop text-right">
+            <a href="#" class="theme-bg white-text text-center d-inline-block mr-10 transition5"><span><i class="fas fa-angle-double-up"></i></span></a>
+        </div>
+    </div>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]:not([data-toggle])').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        // Initialize modals
+        document.querySelectorAll('[data-toggle="modal"]').forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('data-target');
+                if (target) $(target).modal('show');
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

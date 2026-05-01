@@ -7,4 +7,5 @@ django-widget-tweaks==1.4.12
 django_crontab
 django-storages==1.11.1
 web3
+django
 
